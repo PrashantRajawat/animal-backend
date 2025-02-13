@@ -1,8 +1,8 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const reportEmergencySchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  mobileNumber: { type: String, required: true },
+  name: { type: String },
+  mobileNumber: { type: String },
   selectedDoctors: [
     {
       name: String,
@@ -36,7 +36,9 @@ const reportEmergencySchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now },
 });
 
-export const ReportEmergency = mongoose.model(
+const ReportEmergency = mongoose.model(
   "ReportEmergency",
   reportEmergencySchema
 );
+
+module.exports = ReportEmergency;
