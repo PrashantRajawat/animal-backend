@@ -28,8 +28,8 @@ const reportEmergencySchema = new mongoose.Schema({
     ],
   },
   location: {
-    liveLocation: Boolean,
-    currentLocation: Boolean,
+    liveLocation: String,
+    currentLocation: String,
   },
   requestVideoCall: Boolean,
   makeDonation: Boolean,
