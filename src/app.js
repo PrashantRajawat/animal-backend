@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const { connectDB } = require("./config/dbConfig");
 const reportEmergencyRoutes = require("./routes/reportEmergency.routes");
 const uploadRoutes = require("./routes/upload.routes");
+const placesRoutes = require("./routes/places.routes");
 const errorHandler = require("./middlewares/errorHandler");
 
 dotenv.config();
@@ -17,6 +18,7 @@ app.use(express.json());
 
 app.use("/api/report-emergency", reportEmergencyRoutes);
 app.use("/api/upload", uploadRoutes);
+app.use("/api/places", placesRoutes);
 
 app.use(errorHandler);
 
